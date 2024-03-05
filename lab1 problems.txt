@@ -1,0 +1,14 @@
+1.)
+Se defineste clasa Autovehicul care sa contina datele private: marca, model, capacitate cilindrica, numar de locuri, culoare, km parcursi, numar inmatriculare, an de fabricatie. Se vor implementa: constructorii necesari, operatorul de citire (extragere ) din stream. si functiile si operatorii necesari rezolvarii urmatoarei aplicatii:
+
+Se citesc de la trastatura N obiecte de tip Autovehicul.
+
+a) Se vor afisa toate numerele de inmatriculare ale vehiculelor de culoare C si capacitate cilindrica cuprinsa intre cc1 si cc2. C, cc1 si cc2 se vor citi de la tastatura.
+
+
+2.)
+Se defineste clasa Autovehicul care sa contina datele private: marca, model, capacitate cilindrica, numar de locuri, culoare, km parcursi, numar inmatriculare, an de fabricatie. Se vor implementa: constructorii necesari, operatorul de citire (extragere ) din stream. si functiile si operatorii necesari rezolvarii urmatoarei aplicatii:
+
+Se citesc de la trastatura N obiecte de tip Autovehicul.
+
+b) Se va afisa tipul masinii care este cea ma veche si care este inmatricutata in judetul J (j citit de la tastatura)

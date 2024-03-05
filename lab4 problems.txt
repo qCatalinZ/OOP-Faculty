@@ -1,0 +1,104 @@
+1.)
+Descriere
+Implementați folosind noțiuni de POO următoarele clase:
+1. Persoana - conține “nume” de tip șir de caractere având dimensiunea maximă 30 și
+“anul nașterii” de tip întreg fără semn.
+2. Profesor - derivată din Persoana, conține “număr cursuri” de tip întreg fără semn și
+un vector cu ID-ul cursurilor. Valoarea maximă pentru “număr cursuri” este 10.
+3. Student - derivată din Persoana, conține “an licență” de tip întreg fără semn, “număr
+cursuri” de tip întreg fără semn, un vector cu ID-ul cursurilor și un vector cu notele
+obținute la curs. Nota cu indexul i este obținută pentru cursul cu indexul i. Valoarea
+maximă pentru “număr cursuri” este 30.
+4. Curs - conține “ID” de tip șir de caractere având dimensiunea maximă 10, “nume” de
+tip șir de caractere având dimensiunea maximă 50, “puncte credit” de tip întreg fără
+semn și “an studiu” de tip întreg fără semn.
+Date de intrare
+Pe prima linie un număr natural N, numărul de profesori.
+Urmează 2 * N linii, descrierea pentru fiecare profesor pe câte 2 linii fiecare astfel:
+Pe prima linie, separate prin spațiu: numele, anul nașterii și numărul de cursuri.
+Pe a doua linie, separate prin spațiu: ID-urile pentru cursurile sale.
+Pe următoarea linie un număr natural M, numărul de studenți
+Urmează 3 * M linii, descrierea pentru fiecare student pe câte 3 linii fiecare astfel:
+Pe prima linie, separate prin spațiu: numele, anul nașterii, anul de la licență, numărul
+de cursuri.
+Pe a doua linie, separate prin spațiu: ID-urile pentru cursurile sale.
+Pe a treia linie, separate prin spațiu, notele obținute la fiecare curs.
+Pe următoarea linie un număr natural K, numărul de cursuri.
+Urmează K linii, descrierea pentru fiecare curs pe câte 1 linie astfel:
+Pe prima linie, separate prin spațiu: ID, nume, puncte credite, anul de studiu.
+Restricții și precizări
+Folosirea de containere STL (vector, map, etc) sau a funcțiilor din STL (sort, max_element,
+etc) va conduce la anularea punctajului.
+Este permisă folosirea clasei string.
+Implementarea vectorilor în mod static va fi penalizată cu 20% din punctajul maxim.
+Nerespectarea principiilor de POO va conduce la anularea punctajului.
+Se garantează faptul că toate șirurile de caractere nu vor conține spații.
+
+Afișați, în ordinea în care au fost citiți, numele studenților care nu au promovat anul.
+Un student promovează anul dacă a strâns cel puțin 20 puncte credit din cursurile
+promovate.
+Un student promovează un curs dacă nota pentru cursul respectiv este cel puțin 5.
+Afișați numele separate prin spațiu. Pentru simplitate, puneți spațiu și după ultimul nume.
+
+
+2.)
+Descriere
+Sa se implementeze clasa de baza, abstractă, OperatiuneBancara și clasele derivate:
+AlimetareCont, DepozitConstituire, DepozitScadenta, PlataCredit
+Clasele se vor structura în așa fel încât să existe următoarele informații: data tranzacției, suma
+operațiunii. Se recomandă implementarea următoarelor două metode pur virtuale:
+1. o metodă pentru a obține suma ce va fi retrasă din cont, fără a ține cont de taxe,
+penalizări, etc.
+2. o metodă care primește suma din cont și o modifică.
+AlimentareCont: contul este alimentat cu suma operațiunii. Se va reține un comision egal cu 10%
+din suma operațiunii, dar nu mai puțin de 5 lei.
+DepozitConstituire: suma operațiunii se retrage din cont;
+DepozitScadenta: se alimentează contul cu suma operațiunii + dobândă – impozit. Se cunoaște
+dobânda anuala. Dobânda se calculează pe perioada depozitului (1 lună, 3 luni, 6 luni, 9 luni, 12
+luni). Impozitul este 10% din dobânda.
+PlataCredit: se retrage din cont suma operațiunii + dobândă + penalizari. Se cunoaște data pentru
+plată, dobânda anuală (se percepe dobânda pe 1 lună). Penalizările pentru întârziere sunt egale cu
+2% pentru fiecare zi de întârziere.
+Date de intrare:
+Pe prima linie un numar natural N, numarul de operatiuni bancare.
+Pe urmatoarele N linii, descrierea unei operatiuni, care poate fi una din urmatoreala variante:
+AC SUMA_OP DATA_TRANZ
+DC SUMA_OP DATA_TRANZ
+DS SUMA_OP DATA_TRANZ DOBANDA_ANUALA PERIOADA_DEPOZITULUI\
+PC SUMA_OP DATA_TRANZ DATA_PLATA DOBANDA_ANUALA
+Restricții și precizări
+SUMA_OP, DOBANDA_ANUALA vor fi numere reale
+DATA_TRANZ, DATA_PLATA vor fi numere naturale.
+PERIOADA_DEPOZITULUI va fi unul dintre {1, 3, 6, 9, 12}.
+Dacă dobânda anuală este 12% atunci dobânda pentru 1 lună este 1%, pentru 3 luni este 3%, etc.
+Dobânda pentru DepozitScandenta și PlataCredit se calculează față de suma operațiunii.
+Penalizarea pentru PlataCredit se calculează față de (suma operațiunii + dobânda).
+Soluțiile ce nu folosesc noțiuni de POO vor fi punctate cu 0 puncte.
+Este permisă folosirea STL.
+Date de ieșire:
+a) Se afișează indexul (prima = 1) operațiunii care reprezintă cea mai mare suma retrasă din
+cont (fără alte cheltuieli: comisioane, taxe, impozite).
+b) Se afișează, cu 2 zecimale, suma rămasa in cont după ce toate operațiunile au fost
+efectuate, inclusiv cheltuielile aferente operațiunilor respective (obs.: răspunsul poate fi
+negativ!). Inițial contul este gol.
+Exemplu
+5
+AC 1000 1
+AC 20 2
+DC 500 3
+DS 500 93 0.24 3
+PC 300 95 90 0.48
+a) 3
+b) 598.80
+Explicație:
+În ordinea de la intrare, au loc următoarele operațiuni:
+1) Se alimentează contul cu 1000. Comisionul este egal cu 100, deci în cont vor fi 900.
+2) Se alimentează contul cu 20. Comisionul este egal cu 5, deci în cont vor fi 915.
+3) Se realizează un depozit cu 500. În cont rămân 415.
+4) Depozitul ajunge la scadență: dobânda anuală este 24% pe an, deci 2% pe lună. Depozitul a fost
+timp de 3 luni deci 6% din 500 = 30. Impozitul va fi 10% din 30 deci 3. Se adaugă în cont 500 + 30
+- 3 = 527. În cont vor fi 942.
+5) Un credit de 300, are dobânda anuală 48% pe an, deci 4% pe lună, deci 12. Plata se face cu 5 zile
+întârziere, deci o penalizare de 10% din (312) = 31.2. În final rămân în cont 598.8
+Cea mai mare sumă retrasă a fost la operațiunea cu numărul 3, în valoarea de 500. A mai existat o
+retragere la operațiunea 5, cu suma de bază 300 care este mai mică.

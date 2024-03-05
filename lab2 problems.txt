@@ -1,0 +1,149 @@
+1.)
+Se definește clasa Elev care conține următoarele date private:
+
+Nume = nume elev
+
+Prenume = prenume elev
+
+nAdmitere = nota examen admitere
+
+nM = media notelor matematica in clasele 5-8
+
+nR = media notelor romana in clasele 5-8
+
+Se vor implementa, numai daca sunt necesare funcțiile membre: constructor implicit, constructori de inițializare, constructor de copiere, operator de atribuire (operator=). Orice alta functie considerata necesare este permisa. 
+
+Se vor implementa (obligatori) funcțiile:
+
+operator<  determină daca 2 obiecte Elev se afla in relația < astfel: prima data după valoarea nAdmitere, daca acestea sunt egale, se ia in considerare valoarea nM, iar daca si acestea sunt egale, obiectele se vor ordona după nR.
+
+operator==  2 obiecte Elev sunt egale daca au aceleași valori pentru  nAdmitere, nM, nR
+
+operator>> citește din stream-ul de intrare toate atributele unui obiect Elev.
+
+operator<<  trimite in stream-ul de ieșire Nume si Prenume despărțite prin spațiu, pentru obiectul curent de tip Elev.
+
+In funcția main() se citește NE, numărul de elevi care au participat la examen, apoi pe linii separate datele referitoare la cei NE elevi.
+
+Programul trebuie să calculeze și să afișeze (numele si prenumele) elevii care se afla pe primele 3 locuri, dupa modelul din exemplu. Daca exista mai mulți elevi care au același punctaj, ei se considera ca sunt pe același loc și vor fi afișați (unul sub celălalt) în ordinea din lista inițială. Se garantează ca la fiecare categorie există cel puțin un elev.
+
+Exemplu:
+
+Date de intrare:
+
+6
+
+Ionescu Marian 7.45 8.31 9.44
+
+Popescu Dana 8.56 9.32 8.77
+
+Alexandru Petru 8.21 9.33 9.56
+
+Georgescu Ion 8.21 9.33 9.56
+
+Barbu George 8.11 9.33 9.56
+
+Tataru Ioana 8.11 8.99 9.22
+
+Date de ieșire:
+
+Locul 1:
+
+Popescu Dana
+
+Locul 2:
+
+Alexandru Petru
+
+Georgescu Ion
+
+Locul 3:
+
+Barbu George
+
+
+
+2.)
+Se defineste clasa Vector care contine urmatoarele atribute private:
+dimensiunea vectorului, de tip intreg
+
+elementele vectorului, pointer la un tip real
+
+
+Se vor implementa:
+
+toti constructorii care sunt necesari;
+
+destructorul, daca este necesar;
+
+operatorul de atribuire, daca este necesar;
+
+operatorii (element cu element) de adunare (+), scadere (-), inmultire (*), impartire (/);
+
+operatorul de citire >>. Vectorii vor fi pe o singura linie, toate valorile separate de spatiu;
+
+operatorul de afisare <<. Vectorii vor fi afisati pe o singura linie, toate valorile cu 3 zecimale separate de spatiu. Afisati spatiu si dupa ultimul element al vectorului.
+
+
+Programul trebuie sa citeasca un numar de vectori si o sa evalueze o expresie matematica ce contine acesti vectori.
+
+Date de intrare
+Pe prima linie un numar natural N, numarul de vectori.
+
+Pe urmatoarele N linii, un numar necunoscut de numere reale separate prin spatiu, elementele vectorului vi.
+
+Pe urmatoarea linie, o expresie matematica.
+
+Date de iesire
+Pe prima linie, vectorul rezultat din evaluarea expresiei.
+
+Restrictii si precizari
+Operatiile se pot realiza doar intre vectori de dimensiuni egale.
+
+Expresia va contine doar urmatoarele elemente: 
+
+paranteze ‘(‘ ‘)’;
+
+operatii matematice ‘+’ ‘-’ ‘*’ ‘/’;
+
+spatii ‘ ‘;
+
+caracterul V urmat de un numar “Vidx” - pentru a referinta unul din vectorii de intrare
+
+Se garanteaza ca toate elementele de mai sus sunt separate de spatii
+
+Se garanteaza ca expresia va fi simbolic corecta (nu vor fi 2 operatori consecutivi, etc).
+
+Se garanteaza ca vectorii implicati in expresie vor avea aceeasi dimensiune.
+
+Prioritatea operatorilor este:
+
+paranteza
+
+inmultirea si impartirea
+
+adunarea si scaderea
+
+Indexul primului vector in expresie este 0 si va fi reprezentat in formula drept V0
+
+
+Exemplu
+Date de intrare
+
+5
+
+0.2 0.5
+
+0.4 0.6
+
+0.8 0.2
+
+123.456 789.012 345.678
+
+0.5 0.5
+
+V0 + V1 * ( V2 - V4 )
+
+Date de iesire
+
+0.320 0.320
